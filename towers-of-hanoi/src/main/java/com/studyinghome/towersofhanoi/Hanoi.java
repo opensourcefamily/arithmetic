@@ -2,7 +2,7 @@ package com.studyinghome.towersofhanoi;
 
 /**
  * 河内之塔
- *
+ * <p>
  * 说明：河内之塔(Towers of Hanoi)是法国人M.Claus(Lucas)于1883年从泰国带至法国的，河内为越战时
  * 北越的首都，即现在的胡志明市；1883年法国数学家Edouard Lucas曾提及这个故事，据说创世纪时Benares有一座波罗教塔，
  * 是由三支钻石棒（Pag）所支撑，开始时神在第一根棒上放置64个由上至下依由小至大排列的金盘（Disc），
@@ -22,6 +22,17 @@ public class Hanoi {
      * 所需次数为：264- 1 = 18446744073709551615为5.05390248594782e+16年，也就是约5000世纪，
      * 如果对这数字没什幺概念，就假设每秒钟搬一个盘子好了，也要约5850亿年左右。
      */
+    public static int number = 0;
 
-
+    public static void move(int n, char A, char B, char C) {
+        if (n == 1) {
+            number++;
+            System.out.println("第" + number + "步:将第" + n + "个盘子从" + A + "移到" + C);
+        } else {
+            move(n - 1, A, C, B);
+            number++;
+            System.out.println("第" + number + "步:将第" + n + "个盘子从" + A + "移到" + C);
+            move(n - 1, B, A, C);
+        }
+    }
 }

@@ -1,12 +1,13 @@
 package com.studyinghome.towersofhanoi;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
 public class TowersOfHanoiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TowersOfHanoiApplication.class, args);
+        /**
+         * n:盘子个数
+         * A,B,C是三个石棒
+         */
+        Hanoi.move(4, 'A', 'B', 'C');
+        System.out.println("总共移动" + Hanoi.number + "次");
     }
 }
